@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>শুভ বিবাহ – শুভদীপ ও মনিষা</title>
-<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Tiro+Bangla:ital@0;1&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{--wine:#3d0a14;--wine2:#5c1322;--gold:#e0b04a;--gold2:#b98a2c;--ivory:#fbf3e2;--ink:#3a1a12;color-scheme:light;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -70,6 +70,9 @@ section{max-width:640px;margin:0 auto;padding:56px 22px;text-align:center}
 .btn:hover{background:#f3d27a}
 footer{text-align:center;padding:30px 20px 90px;color:#e9cfa0;font-size:16px}
 
+.lang{text-align:center}.lq{color:#e9cfa0;font-size:16px;margin-bottom:10px}.lb button{font-family:inherit;font-size:17px;padding:8px 22px;margin:0 5px;border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:40px;cursor:pointer}.lb button.on{background:var(--gold);color:var(--wine)}
+body.en{font-family:'Cormorant Garamond','Tiro Bangla',serif;font-size:21px;line-height:1.7}
+body.en .seal{font-size:22px}
 .gan{width:104px;height:120px;display:block;margin:0 auto 4px}
 #env{gap:18px}
 /* flower rain */
@@ -116,6 +119,7 @@ body.opened #mus{display:block}
     <div class="flap"></div>
     <div class="seal pulse">Open</div>
   </button>
+  <div class="lang"><div class="lq">ভাষা নির্বাচন করুন</div><div class="lb"><button type="button" data-l="bn" class="on">বাংলা</button><button type="button" data-l="en">English</button></div></div>
 </div>
 
 <div id="rain"></div>
@@ -139,7 +143,7 @@ body.opened #mus{display:block}
     <div class="pcard">
       <div class="role">পাত্র</div>
       <div class="pname">কল্যাণীয় শুভদীপ</div>
-      <p><b>পিতা:</b> শ্রী বীরেন্দ্রনাথ রক্ষিত (শান্তি)</p>
+      <p><b>পিতা:</b> শ্রী বীরেন্দ্রনাথ রক্ষিত</p>
       <p><b>মাতা:</b> শ্রীমতী বেলারানি রক্ষিত</p>
       <p><b>নিবাস:</b> গোপালগঞ্জ, বুড়োশিবতলা বিষ্ণুপুর, বাঁকুড়া</p>
     </div>
@@ -165,7 +169,7 @@ body.opened #mus{display:block}
     <p>শ্রীশ্রী প্রজাপতি ঋষির আশীর্বাদে বৈদিক মন্ত্রোচ্চারণের মধ্য দিয়ে আগামী ১৮ই অগ্রহায়ণ, ১৪৩৩ (ইং ৫ই ডিসেম্বর, ২০২৬) শনিবার আমার একমাত্র পুত্র কল্যাণীয় শুভদীপ-এর সহিত কেঠারডাঙ্গা, বাঁকুড়া নিবাসী শ্রী আদিত্য দাস মহাশয় ও শ্রীমতী মিঠু দাস মহাশয়ার জ্যেষ্ঠা কন্যা কল্যাণীয়া মনিষা-র শুভ পরিণয় সুসম্পন্ন হইবে।</p>
     <p>এতদুপলক্ষে আগামী ১৯শে অগ্রহায়ণ, ১৪৩৩ (ইং ৬ই ডিসেম্বর, ২০২৬) রবিবার সন্ধ্যায় আপনি/আপনারা আয়োজিত প্রীতিভোজ অনুষ্ঠানে উপস্থিত থাকিয়া নবদম্পতিকে আশীর্বাদ দানে বাধিত করিবেন।</p>
     <p>পত্রদ্বারা নিমন্ত্রণের ত্রুটি মার্জনীয়।</p>
-    <p class="sign">ইতি<br>বিনীত<br>শ্রী বীরেন্দ্রনাথ রক্ষিত (শান্তি)<br>গোপালগঞ্জ, বুড়াশিবতলা বিষ্ণুপুর, বাঁকুড়া</p>
+    <p class="sign">ইতি<br>বিনীত<br>শ্রী বীরেন্দ্রনাথ রক্ষিত<br>গোপালগঞ্জ, বুড়াশিবতলা বিষ্ণুপুর, বাঁকুড়া</p>
   </div>
 </section>
 
@@ -204,6 +208,14 @@ body.opened #mus{display:block}
 </footer>
 
 <script>
+var T={"শ্রীশ্রী প্রজাপতয়ে নমঃ": "Shri Shri Prajapataye Namah", "শুভ বিবাহ": "The Auspicious Wedding", "শুভদীপ": "Subhadip", "ও": "&", "মনিষা": "Manisha", "১৮ই অগ্রহায়ণ, ১৪৩৩ · শনিবার": "18th Agrahayan, 1433 · Saturday", "ইং ৫ই ডিসেম্বর, ২০২৬": "5th December, 2026", "পরিচিতি": "Introduction", "পাত্র": "The Groom", "কল্যাণীয় শুভদীপ": "Subhadip", "পিতা:": "Father:", "মাতা:": "Mother:", "বোন:": "Sisters:", "ভাই:": "Brother:", "নিবাস:": "Residence:", "শ্রী বীরেন্দ্রনাথ রক্ষিত": "Sri Birendranath Rakshit", "শ্রীমতী বেলারানি রক্ষিত": "Srimati Belarani Rakshit", "গোপালগঞ্জ, বুড়োশিবতলা বিষ্ণুপুর, বাঁকুড়া": "Gopalganj, Buroshibtala, Bishnupur, Bankura", "পাত্রী": "The Bride", "কল্যাণীয়া মনিষা": "Manisha", "শ্রী আদিত্য দাস": "Sri Aditya Das", "শ্রীমতী মিঠু দাস": "Srimati Mithu Das", "মিনা দাস, প্রিয়া দাস, কোয়েল দাস": "Meena Das, Priya Das, Koyel Das", "কৌশিক দাস": "Kaushik Das", "কেঠারডাঙ্গা, বাঁকুড়া": "Ketharadanga, Bankura", "নিমন্ত্রণপত্র": "Invitation", "সবিনয় নিবেদন,": "Respectfully,", "মহাশয়/মহাশয়া,": "Dear Sir/Madam,", "শ্রীশ্রী প্রজাপতি ঋষির আশীর্বাদে বৈদিক মন্ত্রোচ্চারণের মধ্য দিয়ে আগামী ১৮ই অগ্রহায়ণ, ১৪৩৩ (ইং ৫ই ডিসেম্বর, ২০২৬) শনিবার আমার একমাত্র পুত্র কল্যাণীয় শুভদীপ-এর সহিত কেঠারডাঙ্গা, বাঁকুড়া নিবাসী শ্রী আদিত্য দাস মহাশয় ও শ্রীমতী মিঠু দাস মহাশয়ার জ্যেষ্ঠা কন্যা কল্যাণীয়া মনিষা-র শুভ পরিণয় সুসম্পন্ন হইবে।": "By the blessings of Shri Shri Prajapati Rishi, and with the chanting of Vedic mantras, the auspicious wedding of my only son, Kalyaniya Subhadip, with Kalyaniya Manisha, eldest daughter of Sri Aditya Das and Srimati Mithu Das of Ketharadanga, Bankura, will be solemnised on Saturday, the 18th of Agrahayan, 1433 (5th December, 2026).", "এতদুপলক্ষে আগামী ১৯শে অগ্রহায়ণ, ১৪৩৩ (ইং ৬ই ডিসেম্বর, ২০২৬) রবিবার সন্ধ্যায় আপনি/আপনারা আয়োজিত প্রীতিভোজ অনুষ্ঠানে উপস্থিত থাকিয়া নবদম্পতিকে আশীর্বাদ দানে বাধিত করিবেন।": "On this occasion, on the evening of Sunday, the 19th of Agrahayan, 1433 (6th December, 2026), we humbly request you to grace the reception feast with your presence and bless the newlyweds.", "পত্রদ্বারা নিমন্ত্রণের ত্রুটি মার্জনীয়।": "Kindly forgive any shortcoming in inviting you by letter.", "ইতি": "Yours sincerely,", "বিনীত": "With humility,", "গোপালগঞ্জ, বুড়াশিবতলা বিষ্ণুপুর, বাঁকুড়া": "Gopalganj, Buroshibtala, Bishnupur, Bankura", "স্মারকলিপি": "Event Details", "গাত্রহরিদ্রা": "Gaye Holud", "১৮ই অগ্রহায়ণ, ১৪৩৩ (ইং ৫ই ডিসেম্বর, ২০২৬) শনিবার": "Saturday, 18th Agrahayan 1433 (5th December 2026)", "কামারপাড়া কমিউনিটি হল": "Kamarpara Community Hall", "বিষ্ণুপুর, বাঁকুড়া": "Bishnupur, Bankura", "শুভবিবাহ": "Wedding Ceremony", "সার্থক এপার্টমেন্ট": "Sarthak Apartment", "রাজগ্রাম হাইস্কুল বাইপাস রোড, বাঁকুড়া": "Rajgram High School Bypass Road, Bankura", "(রাজগ্রাম হাইস্কুলের নিকটে)": "(Near Rajgram High School)", "প্রীতিসম্মেলন": "Reception", "১৯শে অগ্রহায়ণ, ১৪৩৩ (ইং ৬ই ডিসেম্বর, ২০২৬) রবিবার · সন্ধ্যা ৭টায়": "Sunday, 19th Agrahayan 1433 (6th December 2026) · 7:00 PM", "প্রীতিভোজের স্থান: ‘যদুভট্ট মঞ্চ’": "Reception Feast Venue: ‘Jadubhatta Mancha’", "আপনাদের সকলের শুভাগমন ও আশীর্বাদ কাম্য": "Your presence and blessings are warmly desired", "ভাষা নির্বাচন করুন": "Choose your language"},nodes=[],lang='bn';
+(function(){var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode:function(n){var t=n.parentNode.nodeName;return(t==='SCRIPT'||t==='STYLE')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT}}),n,k;
+while(n=w.nextNode()){k=n.nodeValue.trim();if(T[k])nodes.push({n:n,o:n.nodeValue,k:k})}})();
+function setLang(l){lang=l;document.body.classList.toggle('en',l==='en');document.documentElement.lang=l==='en'?'en':'bn';
+document.title=l==='en'?'Wedding Invitation \u2013 Subhadip & Manisha':'\u09b6\u09c1\u09ad \u09ac\u09bf\u09ac\u09be\u09b9 \u2013 \u09b6\u09c1\u09ad\u09a6\u09c0\u09aa \u0993 \u09ae\u09a8\u09bf\u09b7\u09be';
+nodes.forEach(function(x){x.n.nodeValue=l==='en'?x.o.replace(x.k,T[x.k]):x.o});
+document.querySelectorAll('.lb button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-l')===l)})}
+document.querySelectorAll('.lb button').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-l'))})});
 var env=document.getElementById('env'),au=document.getElementById('au'),mus=document.getElementById('mus'),playing=false;
 function rain(){
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
