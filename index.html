@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>শুভ বিবাহ – শুভদীপ ও মনিষা</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#3d0a14;--wine2:#5c1322;--gold:#e0b04a;--gold2:#b98a2c;--ivory:#fbf3e2;--ink:#3a1a12;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--wine);color:var(--ivory);font-family:'Tiro Bangla','Hind Siliguri',serif;line-height:1.9;font-size:18px;
+background-image:radial-gradient(circle at 50% 0,#6e1a2c 0,transparent 60%),radial-gradient(var(--wine2) 1.5px,transparent 1.6px);background-size:auto,26px 26px}
+body.locked{overflow:hidden}
+h1,h2,h3{font-weight:400;margin:0}
+section{max-width:640px;margin:0 auto;padding:56px 22px;text-align:center}
+.orn{color:var(--gold);letter-spacing:.6em;font-size:18px;margin:10px 0}
+.title{font-size:30px;color:var(--gold);margin-bottom:6px}
+.sub{color:#e9cfa0;font-size:16px}
+
+/* envelope */
+#env{position:fixed;inset:0;z-index:50;background:var(--wine);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;transition:opacity .45s,visibility 0s .45s;padding:20px}
+#env.gone{opacity:0;visibility:hidden}
+.hdr{color:var(--gold);font-size:22px;text-align:center}
+.envelope{position:relative;width:min(86vw,360px);aspect-ratio:1.45;cursor:pointer;border:0;background:none;padding:0;perspective:900px}
+.env-back,.env-front{position:absolute;inset:0;border-radius:6px}
+.env-back{background:#7a1a2e;box-shadow:0 20px 50px #0008}
+.env-front{background:linear-gradient(135deg,#8c2036 50%,transparent 50%) left/50% 100% no-repeat,linear-gradient(225deg,#8c2036 50%,transparent 50%) right/50% 100% no-repeat,linear-gradient(0deg,#a02a40 50%,transparent 50%) bottom/100% 55% no-repeat;border:1px solid #e0b04a55}
+.flap{position:absolute;left:0;right:0;top:0;height:58%;background:#a02a40;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .45s ease-out;z-index:3;border-top:2px solid var(--gold)}
+.card{position:absolute;left:8%;right:8%;top:8%;height:70%;background:var(--ivory);z-index:1;transition:transform .45s .12s ease-out;border:1px solid var(--gold2)}
+.seal{position:absolute;left:50%;top:50%;width:84px;height:84px;margin:-42px 0 0 -42px;z-index:4;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f3d27a,var(--gold2));color:var(--wine);display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 4px 14px #0007;transition:opacity .4s}
+#env.open .flap{transform:rotateX(180deg);z-index:0}
+#env.open .card{transform:translateY(-38%) scale(1.15)}
+#env.open .seal{opacity:0}
+.pulse{animation:p 1.8s infinite}
+@keyframes p{50%{transform:scale(1.08)}}
+#env.open .pulse{animation:none}
+.hint{color:#e9cfa0;font-size:16px}
+
+/* hero */
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.hero .inv{font-size:20px;color:var(--gold)}
+.names{font-size:clamp(44px,13vw,76px);line-height:1.25;color:var(--ivory);margin:14px 0}
+.names i{display:block;font-size:.38em;color:var(--gold);font-style:normal;margin:4px 0}
+.date{border-top:1px solid var(--gold2);border-bottom:1px solid var(--gold2);padding:10px 24px;color:var(--gold);font-size:19px}
+
+/* people */
+.people{display:grid;gap:20px;margin-top:26px}
+.pcard{border:1px solid var(--gold2);padding:26px 20px;background:#00000026;position:relative}
+.pcard:before{content:"";position:absolute;inset:6px;border:1px solid #e0b04a40;pointer-events:none}
+.role{font-size:15px;color:var(--gold)}
+.pname{font-size:32px;margin:2px 0 12px}
+.pcard p{margin:2px 0;font-size:17px}
+.pcard b{font-weight:400;color:#e9cfa0}
+
+/* letter */
+.paper{background:var(--ivory);color:var(--ink);padding:38px 26px;text-align:left;border:3px double var(--gold2);box-shadow:0 18px 50px #0007;text-align:left}
+.paper h3{text-align:center;color:#7a1a2e;font-size:24px;margin-bottom:16px}
+.paper p{margin:0 0 14px;text-align:justify}
+.sign{text-align:right!important;color:#7a1a2e;margin-top:22px!important}
+
+/* events */
+.ev{border:1px solid var(--gold2);margin:18px 0;padding:24px 18px;background:#00000026}
+.ev h3{color:var(--gold);font-size:26px}
+.ev .d{margin:6px 0 10px}
+.ev .v{font-size:19px}
+.ev .a{color:#e9cfa0;font-size:16px}
+.btn{display:inline-block;margin-top:14px;padding:10px 24px;background:var(--gold);color:var(--wine);text-decoration:none;border-radius:40px;font-size:17px;font-family:inherit}
+.btn:hover{background:#f3d27a}
+footer{text-align:center;padding:30px 20px 90px;color:#e9cfa0;font-size:16px}
+
+.gan{width:104px;height:120px;display:block;margin:0 auto 4px}
+#env{gap:18px}
+/* flower rain */
+#rain{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:70}
+#rain span{position:absolute;top:-40px;animation-name:fall,sway;animation-timing-function:linear,ease-in-out;animation-iteration-count:1,infinite;animation-direction:normal,alternate;animation-fill-mode:both,none}
+#rain .pt{border-radius:150% 0 150% 0;box-shadow:inset -2px -2px 4px #0002}
+#rain .fl{color:var(--gold);line-height:1}
+@keyframes fall{from{transform:translateY(-40px) rotate(0)}to{transform:translateY(112vh) rotate(560deg)}}
+@keyframes sway{from{margin-left:-28px}to{margin-left:28px}}
+
+/* music toggle */
+#mus{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid var(--gold);background:var(--wine);color:var(--gold);font-size:20px;cursor:pointer;display:none}
+body.opened #mus{display:block}
+</style>
+</head>
+<body class="locked">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="gan" viewBox="0 0 200 230">
+<circle cx="100" cy="104" r="96" fill="none" stroke="#e0b04a" stroke-width="1.2" stroke-dasharray="2 6" opacity=".8"/>
+<path d="M62 150 Q36 178 60 206 M138 150 Q164 178 140 206" fill="none" stroke="#e0b04a" stroke-width="2.5" stroke-linecap="round"/>
+<ellipse cx="100" cy="178" rx="46" ry="40" fill="#5c1322" stroke="#e0b04a" stroke-width="2"/>
+<path d="M70 146 Q96 194 142 160" fill="none" stroke="#fbf3e2" stroke-width="2" opacity=".8"/>
+<path d="M46 222 Q100 204 154 222" fill="none" stroke="#e0b04a" stroke-width="2.5" stroke-linecap="round"/>
+<ellipse cx="48" cy="92" rx="30" ry="40" fill="#5c1322" stroke="#e0b04a" stroke-width="2"/>
+<ellipse cx="152" cy="92" rx="30" ry="40" fill="#5c1322" stroke="#e0b04a" stroke-width="2"/>
+<ellipse cx="48" cy="92" rx="15" ry="26" fill="none" stroke="#e0b04a" stroke-width="1.2" opacity=".7"/>
+<ellipse cx="152" cy="92" rx="15" ry="26" fill="none" stroke="#e0b04a" stroke-width="1.2" opacity=".7"/>
+<ellipse cx="100" cy="94" rx="38" ry="42" fill="#5c1322" stroke="#e0b04a" stroke-width="2.5"/>
+<path d="M68 62 L74 30 L88 50 L100 16 L112 50 L126 30 L132 62 Z" fill="#e0b04a" stroke="#b98a2c" stroke-width="1.5" stroke-linejoin="round"/>
+<circle cx="100" cy="40" r="5" fill="#a02a40"/>
+<path d="M100 60 L100 72" stroke="#e0b04a" stroke-width="3" stroke-linecap="round"/>
+<path d="M78 88 q7 -6 14 0 M108 88 q7 -6 14 0" fill="none" stroke="#fbf3e2" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M100 106 C100 140 104 158 88 166 C76 172 66 160 76 152" fill="none" stroke="#e0b04a" stroke-width="17" stroke-linecap="round"/>
+<path d="M100 106 C100 140 104 158 88 166 C76 172 66 160 76 152" fill="none" stroke="#5c1322" stroke-width="12" stroke-linecap="round"/>
+<path d="M114 116 Q130 130 120 146" fill="none" stroke="#fbf3e2" stroke-width="5" stroke-linecap="round"/>
+</symbol></svg>
+
+<div id="env">
+  <svg class="gan" viewBox="0 0 200 230" aria-label="শ্রীগণেশ"><use href="#gan"/></svg>
+  <div class="hdr">শ্রীশ্রী প্রজাপতয়ে নমঃ</div>
+  <button class="envelope" id="eb" aria-label="খুলুন">
+    <div class="env-back"></div>
+    <div class="card"></div>
+    <div class="env-front"></div>
+    <div class="flap"></div>
+    <div class="seal pulse">Open</div>
+  </button>
+</div>
+
+<div id="rain"></div>
+<audio id="au" loop preload="auto" src="song.mp3"></audio>
+<button id="mus" aria-label="গান বন্ধ/চালু">♪</button>
+
+<main>
+<section class="hero">
+  <svg class="gan" viewBox="0 0 200 230" aria-label="শ্রীগণেশ"><use href="#gan"/></svg>
+  <div class="inv">শুভ বিবাহ</div>
+  <div class="orn">❀ ❀ ❀</div>
+  <h1 class="names">শুভদীপ<i>ও</i>মনিষা</h1>
+  <div class="date">১৮ই অগ্রহায়ণ, ১৪৩৩ · শনিবার</div>
+  <div class="sub" style="margin-top:10px">ইং ৫ই ডিসেম্বর, ২০২৬</div>
+</section>
+
+<section>
+  <h2 class="title">পরিচিতি</h2>
+  <div class="orn">❖</div>
+  <div class="people">
+    <div class="pcard">
+      <div class="role">পাত্র</div>
+      <div class="pname">কল্যাণীয় শুভদীপ</div>
+      <p><b>পিতা:</b> শ্রী বীরেন্দ্রনাথ রক্ষিত (শান্তি)</p>
+      <p><b>মাতা:</b> শ্রীমতী বেলারানি রক্ষিত</p>
+      <p><b>নিবাস:</b> গোপালগঞ্জ, বুড়োশিবতলা বিষ্ণুপুর, বাঁকুড়া</p>
+    </div>
+    <div class="pcard">
+      <div class="role">পাত্রী</div>
+      <div class="pname">কল্যাণীয়া মনিষা</div>
+      <p><b>পিতা:</b> শ্রী আদিত্য দাস</p>
+      <p><b>মাতা:</b> শ্রীমতী মিঠু দাস</p>
+      <p><b>বোন:</b> মিনা দাস, প্রিয়া দাস, কোয়েল দাস</p>
+      <p><b>ভাই:</b> কৌশিক দাস</p>
+      <p><b>নিবাস:</b> কেঠারডাঙ্গা, বাঁকুড়া</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 class="title">নিমন্ত্রণপত্র</h2>
+  <div class="orn">❖</div>
+  <div class="paper">
+    <h3>শ্রীশ্রী প্রজাপতয়ে নমঃ</h3>
+    <p>সবিনয় নিবেদন,</p>
+    <p>মহাশয়/মহাশয়া,</p>
+    <p>শ্রীশ্রী প্রজাপতি ঋষির আশীর্বাদে বৈদিক মন্ত্রোচ্চারণের মধ্য দিয়ে আগামী ১৮ই অগ্রহায়ণ, ১৪৩৩ (ইং ৫ই ডিসেম্বর, ২০২৬) শনিবার আমার একমাত্র পুত্র কল্যাণীয় শুভদীপ-এর সহিত কেঠারডাঙ্গা, বাঁকুড়া নিবাসী শ্রী আদিত্য দাস মহাশয় ও শ্রীমতী মিঠু দাস মহাশয়ার জ্যেষ্ঠা কন্যা কল্যাণীয়া মনিষা-র শুভ পরিণয় সুসম্পন্ন হইবে।</p>
+    <p>এতদুপলক্ষে আগামী ১৯শে অগ্রহায়ণ, ১৪৩৩ (ইং ৬ই ডিসেম্বর, ২০২৬) রবিবার সন্ধ্যায় আপনি/আপনারা আয়োজিত প্রীতিভোজ অনুষ্ঠানে উপস্থিত থাকিয়া নবদম্পতিকে আশীর্বাদ দানে বাধিত করিবেন।</p>
+    <p>পত্রদ্বারা নিমন্ত্রণের ত্রুটি মার্জনীয়।</p>
+    <p class="sign">ইতি<br>বিনীত<br>শ্রী বীরেন্দ্রনাথ রক্ষিত (শান্তি)<br>গোপালগঞ্জ, বুড়াশিবতলা বিষ্ণুপুর, বাঁকুড়া</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="title">স্মারকলিপি</h2>
+  <div class="orn">❖</div>
+
+  <div class="ev">
+    <h3>গাত্রহরিদ্রা</h3>
+    <div class="d sub">১৮ই অগ্রহায়ণ, ১৪৩৩ (ইং ৫ই ডিসেম্বর, ২০২৬) শনিবার</div>
+    <div class="v">কামারপাড়া কমিউনিটি হল</div>
+    <div class="a">বিষ্ণুপুর, বাঁকুড়া</div>
+  </div>
+
+  <div class="ev">
+    <h3>শুভবিবাহ</h3>
+    <div class="d sub">১৮ই অগ্রহায়ণ, ১৪৩৩ (ইং ৫ই ডিসেম্বর, ২০২৬) শনিবার</div>
+    <div class="v">সার্থক এপার্টমেন্ট</div>
+    <div class="a">রাজগ্রাম হাইস্কুল বাইপাস রোড, বাঁকুড়া<br>(রাজগ্রাম হাইস্কুলের নিকটে)</div>
+    <a class="btn" href="https://maps.app.goo.gl/UaFq5LAoR6zBcfS79?g_st=ac" target="_blank" rel="noopener">Open in Maps</a>
+  </div>
+
+  <div class="ev">
+    <h3>প্রীতিসম্মেলন</h3>
+    <div class="d sub">১৯শে অগ্রহায়ণ, ১৪৩৩ (ইং ৬ই ডিসেম্বর, ২০২৬) রবিবার · সন্ধ্যা ৭টায়</div>
+    <div class="v">প্রীতিভোজের স্থান: ‘যদুভট্ট মঞ্চ’</div>
+    <div class="a">বিষ্ণুপুর, বাঁকুড়া</div>
+    <a class="btn" href="https://maps.app.goo.gl/ZPs26PTfVCxWxvnYA?g_st=ac" target="_blank" rel="noopener">Open in Maps</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="orn">❀ ❀ ❀</div>
+  আপনাদের সকলের শুভাগমন ও আশীর্বাদ কাম্য
+</footer>
+
+<script>
+var env=document.getElementById('env'),au=document.getElementById('au'),mus=document.getElementById('mus'),playing=false;
+function rain(){
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var box=document.getElementById('rain'),cols=['#f6c1cc','#f2a3b6','#fbf3e2','#e8c36a','#ffd9b0'],i,s,sz,fl;
+  for(i=0;i<48;i++){
+    fl=Math.random()<.25;s=document.createElement('span');
+    if(fl){s.className='fl';s.textContent=Math.random()<.5?'❀':'✿';s.style.fontSize=(14+Math.random()*14)+'px'}
+    else{s.className='pt';sz=9+Math.random()*10;s.style.width=sz+'px';s.style.height=sz*1.4+'px';s.style.background=cols[Math.floor(Math.random()*cols.length)]}
+    s.style.left=(Math.random()*100)+'vw';
+    s.style.animationDuration=(5+Math.random()*4)+'s,'+(1.8+Math.random()*2)+'s';
+    s.style.animationDelay=(Math.random()*3)+'s,0s';
+    box.appendChild(s);
+  }
+  setTimeout(function(){box.innerHTML=''},13000);
+}
+function setIcon(){mus.textContent=playing?'♪':'✕'}
+document.getElementById('eb').addEventListener('click',function(){
+  if(env.classList.contains('open'))return;
+  env.classList.add('open');
+  try{au.volume=0.9;var p=au.play();if(p&&p.then)p.then(function(){playing=true;setIcon()}).catch(function(){playing=false;setIcon()})}catch(e){}
+  rain();
+  setTimeout(function(){env.classList.add('gone');document.body.classList.remove('locked');document.body.classList.add('opened');window.scrollTo(0,0)},450);
+});
+mus.addEventListener('click',function(){
+  if(au.paused){au.play();playing=true}else{au.pause();playing=false}
+  setIcon();
+});
+</script>
+</body>
+</html>
